@@ -17,7 +17,7 @@
 - Time precision: Unix timestamp in seconds
 - Value precision: python `float`
   - which is pretty big, how is it serialized on disk, and it can be compressed using general compression algorithm
-- Store Timestamo: Yes
+- Store Timestamp: Yes
   - [ ] full timestamp?
 
 ## Architecture

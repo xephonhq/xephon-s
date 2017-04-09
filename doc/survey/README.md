@@ -21,7 +21,7 @@ Also contains some K-V and Column store, which is used for time series very ofte
 ### Tree
 
 - [ ] [Akumuli](akumuli.md)
-- [ ] BtrDB
+- [ ] [BtrDB](btrdb.md)
 - [ ] LMDB
 
 ### LSM
@@ -32,7 +32,7 @@ Also contains some K-V and Column store, which is used for time series very ofte
 
 ### Column
 
-- [ ] Druid
+- [ ] [Druid](druid.md)
 - [ ] Protobuf, Dremel
 - [ ] Parquet (open source implementation of Dremel)
 

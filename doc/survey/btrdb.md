@@ -1,10 +1,15 @@
 # BTrDB
 
+- https://www.usenix.org/sites/default/files/conference/protected-files/fast16_sildes_andersen.pdf
+
 ## TODO
 
 - [ ] No timestamp in internal nodes?
+  - it's time partitioned, so each block has fixed time range?
+  - [ ] does it mentioned hole?
 - [ ] How the version number is set?
 - [ ] How is the out of order handled?
+- [ ] Crash recovery? seems not mentioned at all?
 
 ## Meta
 

@@ -4,6 +4,14 @@
   - https://docs.google.com/document/d/1jFK8E3CZSqR5IPsMGojm2LknkNyUZA7tY51N6IgzW_g/pub
 - https://github.com/at15/papers-i-read/issues/39
 
+## TODO
+
+- [ ] How many level would be in memory
+- [ ] If want to be distributed, how to handle the address (pointer), file offset?
+partition a large series? what's the physical limit of a single series?
+- [ ] interleave different series would cause little performance penalty when read on SSD, but would
+it cause trouble on spin drive? The block size is pretty small.
+
 ## Meta
 
 

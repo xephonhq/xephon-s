@@ -11,6 +11,7 @@
 partition a large series? what's the physical limit of a single series?
 - [ ] interleave different series would cause little performance penalty when read on SSD, but would
 it cause trouble on spin drive? The block size is pretty small.
+- [ ] In leaf node, how are the compressed data points stored? `t1, v1, t2, v2` or `t1, t2, v1, v2`
 
 ## Meta
 

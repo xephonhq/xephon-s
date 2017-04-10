@@ -31,3 +31,28 @@ https://www.youtube.com/watch?v=Sz4w75xRrYM
 - Monitoring
   - Use Druid to monitor Druid
 - **Use cases should define engineering**
+
+## Druid: A Real-time Analytical Data Store
+
+- time series data with both numeric and text value
+- a set dimension columns
+  - KairosDB etc. are not multi dimension, strictly speaking
+  - query over any arbitrary combination of dimensions
+
+Features for a dashboard
+
+- query latency
+- multi-tenant
+- HA
+- make business decisions in "real-time"
+
+### Architecture
+
+> The name Druid comes from the Druid class in many role-playing games: it is a
+shape-shifter, capable of taking on many different forms to fulfill
+various different roles in a group.
+
+- real time node
+- historical node
+- broker node
+- coordinator node

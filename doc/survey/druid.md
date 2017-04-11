@@ -56,3 +56,31 @@ various different roles in a group.
 - historical node
 - broker node
 - coordinator node
+
+Real-time Node
+
+- use ZK for online state and data range?
+- Row store when in JVM heap-based buffer
+- persist in-memory indexes to disk periodically/based on threshold of rows
+  - [ ] TODO: just indexes? how does Druid know which node to build index
+  - column oriented storage format
+- [ ] load persisted indexes into off-heap memory
+- immutable block **segment** into deep storage (s3, HDFS)
+- **consume Kafka**
+  - buffer (and crash recovery)
+  - single end point for multiple real-time nodes to read events
+
+Historical Nodes
+
+- load, drop, serve immutable segments
+- use ZK for online state and data range
+- download segment from deep storage, first check local cache
+- **group into Tiers**
+
+Broker Nodes
+
+- broker nodes act as query routers to historical and real-time nodes
+- merge partial results
+- LRU cache
+
+Coordinator Nodes

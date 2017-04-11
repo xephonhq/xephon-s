@@ -84,3 +84,22 @@ Broker Nodes
 - LRU cache
 
 Coordinator Nodes
+
+- use ZK to select leader, other as backup
+- MVCC swapping protocol to maintain stable views
+- **MySQL**
+  - a list of all segments that should be served by historical node
+  - [ ] then what is ZK used for?
+  - configuration
+- **Rules**
+  - rules govern how historical segments are loaded and dropped from the cluster
+- cost-based optimization for load balancing
+- replication
+  - used for rolling update
+  - the data is actually in deep storage (s3, HDFS)
+
+Storage Format
+
+- **Segement**: a collection of rows of data that span some period of time
+  - unit for replication
+- **druid always requires a timestamp column as a method of simplifying data distribution policies, data retention policies, and first level query pruning**

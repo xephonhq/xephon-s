@@ -1,5 +1,8 @@
 # Druid
 
+## Take away
+
+- https://dev.twitter.com/streaming/public
 
 ## Stories from the Trenches – The Challenges of Building an Analytics Stack
 
@@ -102,4 +105,45 @@ Storage Format
 
 - **Segement**: a collection of rows of data that span some period of time
   - unit for replication
+  - data source identifier
+  - time interval
+    - [ ] TODO: must be fixed interval, or this is a approximate interval
+  - version string for concurrency control
 - **druid always requires a timestamp column as a method of simplifying data distribution policies, data retention policies, and first level query pruning**
+- time granularity to partition segments is a function of data volume and time range
+  - [ ] TODO: how to know the range, let user specify it
+  - i.e. data spread a year is partitioned by day, data spread over a day is partitioned by hour
+- **Column store**
+  - dictionary encoding for string
+  - [ ] where is the dictionary stored, in segment?
+  - **use generic compression algorithm on top of encoding**
+  - LZF
+- **Bitmap index**
+
+Storage Engine
+
+- in memory (i.e. JVM heap)
+- memory mapped
+
+> main drawback with using the memory-mapped storage engine is when a query requires more segments to be paged into memory
+than a given node has capacity for.
+
+- [ ] doesn't JVM heap also have this problem and bigger
+
+Query API
+
+- filter
+  - type i.e. selector
+  - dimension (column)
+  - value
+- granularity: i.e. day
+- aggregations
+  - type i.e. count
+  - name i.e. rows
+
+- **don't want to implement join**
+
+### Performance
+
+- TPC-H
+- 10TB RAM (wow ..... that's e... well 64 * 160 ... (2^6+2^4) * 10)

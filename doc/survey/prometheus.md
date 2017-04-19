@@ -28,6 +28,7 @@ Problems of one file per series
 
 Series Churn
 
+- [**InfluxDB also addressed this**](influxdb.md)
 - some series never get update, i.e. old instances removed by Kubernetes
 - leveldb can't handle complex query efficiently i.e. `instance="12bd" AND region="us"`
   - i.e. index tag better

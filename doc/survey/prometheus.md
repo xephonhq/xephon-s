@@ -1,6 +1,7 @@
 # Prometheus
 
 - https://fabxc.org/blog/2017-04-10-writing-a-tsdb/
+  - https://github.com/prometheus/tsdb/
 
 ## Take away
 
@@ -51,7 +52,20 @@ Index
 
 > So assuming our index lookup was of complexity O(n^2), we managed to reduce the n a fair amount and now have an improved complexity of O(n^2) — uhm, wait... damn it.
 
+- [ ] index on tag key or tag value?
 - inverted index
 - combining labels
-  - sort the data in inverted index
+  - To find all series satisfying both label selectors, we take the inverted index list for each and intersect them
+  - sort the data in inverted index and do a k-way merge `O(nk)`
+  - https://github.com/prometheus/tsdb/issues/50 `O(n logk)`
   - https://en.wikipedia.org/wiki/Search_engine_indexing#Inverted_indices
+
+````go
+type memPostings struct {
+	m map[term][]uint32
+}
+
+type term struct {
+	name, value string
+}
+````

@@ -1,6 +1,8 @@
 # InfluxDB
 
 - index https://www.influxdata.com/path-1-billion-time-series-influxdb-high-cardinality-indexing-ready-testing/
+  - https://github.com/influxdata/influxdb/commits/er-tsi-prop
+  - https://github.com/influxdata/influxdb/tree/tsi
 - store https://docs.influxdata.com/influxdb/v1.2/concepts/storage_engine/
 
 ## Path to 1 Billion Time Series: InfluxDB high cardinality indexing ready for testing

@@ -27,7 +27,7 @@
 - time partitioning
 - multi resolution
 - version annotated
-- copy on write
+- [ ] copy on write
 - k-ary tree
 
 Internal Node

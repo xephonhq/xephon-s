@@ -60,6 +60,9 @@ Index
   - https://github.com/prometheus/tsdb/issues/50 `O(n logk)`
   - https://en.wikipedia.org/wiki/Search_engine_indexing#Inverted_indices
 
+- https://github.com/prometheus/tsdb/blob/master/postings.go in memory operations
+- https://github.com/prometheus/tsdb/blob/master/index.go on disk structure
+
 ````go
 type memPostings struct {
 	m map[term][]uint32
